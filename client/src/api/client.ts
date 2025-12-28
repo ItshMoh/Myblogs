@@ -1,5 +1,5 @@
-// API Base URL - uses Vite proxy in development
-const API_BASE = '/api';
+// API Base URL - uses env variable in production, Vite proxy in development
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 export interface Post {
     _id: string;
