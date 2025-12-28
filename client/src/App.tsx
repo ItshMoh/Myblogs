@@ -183,7 +183,6 @@ const GlitchText: React.FC<GlitchTextProps> = ({ text }) => {
  * ------------------
  */
 export default function RetroBlogApp() {
-    const [booted, setBooted] = useState(false);
     const [activeTab, setActiveTab] = useState<'posts' | 'articles'>('posts');
     const [showBootSequence, setShowBootSequence] = useState(true);
 
@@ -191,7 +190,6 @@ export default function RetroBlogApp() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShowBootSequence(false);
-            setBooted(true);
         }, 3000);
         return () => clearTimeout(timer);
     }, []);
